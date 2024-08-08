@@ -1,0 +1,39 @@
+1) how to create ssh and in git
+
+1) run this command on treminal
+ssh-keygen
+
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/shoaibhusain/.ssh/id_rsa): 
+/home/shoaibhusain/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+
+
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+
+
+Hit Enter after set password
+
+2) go to folder
+cd /home/shoaibhusain/.ssh
+
+3) check file
+ll
+
+4) Remove or delete old file   
+rm known_hosts known_hosts.old 
+
+5) check public key copy
+cat id_rsa.pub 
+
+6) goto git account and in setting add new ssh 
+7) copy public key and paste in git account
+
+8) take clone 
+git clone git@github.com:shoaibhusain-eng/node-auto-deploy-cicd.git
+
+
+
+
