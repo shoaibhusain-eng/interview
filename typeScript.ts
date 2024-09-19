@@ -6,6 +6,58 @@
 // it detect error at compile time
 
 //////////////////////////////////////////////////////////////////////
+//  Differences JavaScript and TypeScript 
+
+// 1) 
+// JavaScript is a dynamically typed language, meaning types are determined at runtime. 
+// This can lead to runtime errors if types are not as expected.
+
+// JavaScript (no type annotations)
+// function greet(name) {
+//     return `Hello, ${name}`;
+//   }
+
+// TypeScript is a statically typed superset of JavaScript
+
+// TypeScript
+// function greet(name: string): string {
+//     return `Hello, ${name}`;
+//   }
+  
+
+// 2) 
+// don't have interface
+
+// support interface
+
+// 3)
+
+// JavaScript:
+// JavaScript is an interpreted language, 
+// meaning it is executed directly by the browser or 
+// Node.js environment without a compilation step.
+
+// TypeScript:
+// TypeScript needs to be compiled into JavaScript before it can be executed. 
+// The TypeScript compiler (tsc) translates TypeScript code into JavaScript code.
+
+// 4)
+// JavaScript:
+// Error checking is performed at runtime. 
+// Type-related errors can only be detected when the code is executed.
+
+// TypeScript:
+// TypeScript performs compile-time error checking. 
+// It can catch errors related to type mismatches, 
+// missing properties, and other issues before the code is run.
+
+// 5)
+// JavaScript:
+// JavaScript runs natively in all modern browsers and environments.
+
+// TypeScript:
+// TypeScript code needs to be compiled into 
+// JavaScript to run in browsers or Node.js
 
 
 // Difference between Type and Interface in TypeScript:

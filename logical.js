@@ -92,14 +92,17 @@
 // Code 2:
 
 // function runFunc(){
-//   console.log("1" + 1);
-//   console.log("A" - 1);
-//   console.log(1 - '1');
-//   console.log(2 + "-2" + "2");
-//   console.log("Hello" - "World" + 78);
-//   console.log("Hello"+ "78");
+//   console.log("1" + 1); //11
+//   console.log("A" - 1); //NaN
+//   console.log(1 - '1'); //0
+//   console.log(2 + "-2" + "2"); //2-22
+//   console.log("Hello" - "World" + 78); // NaN
+//   console.log("Hello"+ "78");  //Hello78
 // }
 // runFunc();
+
+
+
 
 // Code 3:
 
@@ -149,7 +152,7 @@
 
 // function rotate(newArray, rotation){
 //     rotation = rotation % newArray.length;
-//     let spliceArr = newArray.splice(newArray.length-rotation);
+//     let spliceArr = newArray.splice(newArray.length - rotation);
 //     return [...spliceArr, ...newArray];
 // }
 // console.log(rotate(array,number));
@@ -209,22 +212,35 @@
 
 
 ////////////////////////////////////////////////////////////
+
 //  RemoveDuplicates Element
 
+let arrayList = [2, 1, 2, 5, 2, 3, 1, 5, 7];
+// const arrayList = [1, 4, 3, 4, 5, 3, 7, 8, 9, 10]
 
-// let arrayList =  [2,1,2,5,2,3,1,5,7];
-// let newArray = arrayList.filter((element, index)=> arrayList.indexOf(element)=== index);
-// console.log(newArray);
+// 1)
+// let uniqArr = arrayList.filter((element, index)=> arrayList.indexOf(element)=== index);
 
-
+// 2)
 // function removeDuplicates(arr) {
 //     return [...new Set(arr)];
 // }
-// console.log(removeDuplicates(arrayList));
+// let uniqArr =  removeDuplicates(arrayList);
 
-// let  newArray1 = [];
-// arrayList.forEach((element, index)=> newArray1.indexOf(element) == -1 ? newArray1.push(element):'')
-// console.log(newArray1);
+// 3)
+// let  uniqArr = [];
+// arrayList.forEach((element, index)=> uniqArr.indexOf(element) == -1 ? uniqArr.push(element):'')
+// console.log(uniqArr);
+
+// list of all duplicate value 
+// const duplicateArr = arrayList.filter((element, index) => {
+//     if (arrayList.indexOf(element) !== arrayList.lastIndexOf(element)) {
+//         if (arrayList.indexOf(element) === index)
+//             return element;
+//     }
+// });
+
+// console.log(duplicateArr);
 
 ///////////////////////////////////////////////////////////
 
@@ -253,7 +269,6 @@
 // x()
 // console.log(a); // ReferenceError: a is not defined
 
-
 // function y(){
 //     var b = 10;
 // }
@@ -261,7 +276,6 @@
 // console.log(b); // ReferenceError: a is not defined
 // y()
 // console.log(b); // ReferenceError: a is not defined
-
 
 ///////////////////////////////////////////////////////////////////////
 // block scope
@@ -276,7 +290,6 @@
 //     let b=10;
 // }
 // console.log(10); // ReferenceError: b is not defined
-
 
 //////////////////////////////////////////////////////////
 
@@ -301,7 +314,6 @@
 // console.log(fruits);
 
 
-
 // const months = ['March', 'Jan', 'Feb', 'Dec'];
 // months.sort();
 // console.log(months);
@@ -324,8 +336,19 @@
 // console.log(a==b==b);               //true
 // console.log(3&&8&&6);                //6        
 // console.log(3&&8&&4);                //4       
-// console.log(3&&0&&6);                //0         
+// console.log(3&&0&&6);                //0   
+// console.log(1>2>3);                     // false   1>2 = 0, 0 > 3  = false
+// console.log(1<2<3);                     // true     1 < 2, 1, 1<3 = true
+// console.log(3<2<1);                     // true      3< 2, 0,  0<1 = true
 
+// let x = 'Hello' || false; // x is equal to 'Hello' (first truthy value)
+
+// let y = false || 'Yes' || 1; // y is equal to 'Yes' (first truthy value)
+
+// let z = false || undefined || 0; // since all are false, z is equal to 0 (the last value)
+// let a = false || undefined || false; // since all are false, a is equal to false (the last value)
+
+// console.log(`x ==> ${x},  y ==> ${y}, z ==>${z}, a ==>${a}`);
 
 //////////////////////////////////////////////////////////////
 
@@ -701,6 +724,32 @@
 // }
 
 // console.log(test()()); // shoaib
+
+///////////////////////////////////////////////
+
+// let obj = {
+//     name: "shoaib",
+//     greet: () => {
+//         function child() {
+//             console.log(this.name);
+//         }
+//         child();
+//     }
+// }
+// obj.greet();  // undefined
+
+// this.name = "husain";
+// let obj = {
+//     name: "shoaib",
+//     greet: function () {
+//         function child() {
+//             console.log(this.name);
+//         }
+//         child();
+//     }
+// }
+// obj.greet();  // shoaib
+
 
 ///////////////////////////////////////////////
 
@@ -1185,7 +1234,7 @@
 //         reversed = reversed * 10 + lastDigit;
 //         // num = Math.floor(num / 10); all are same work
 //         // num = parseInt(num / 10);
-//         num = num / 10 >> 0; // it convert flo0t to int
+//         num = num / 10 >> 0; // it convert floot to int
 //     }
 //     return reversed;
 // }
@@ -1214,3 +1263,261 @@
 // console.log(test('shoaib husain'));
 
 //////////////////////////////////////////////////////////////////
+
+// let str = 'aabbbcccdde';
+// let obj = {};
+// for(let i =0;i< str.length;i++){
+//     let   = str[i];
+//     if(obj[key]){
+//         obj[key] = obj[key] + 1;
+//     }else{
+//         obj[key] = 1;
+//     }
+// }
+
+// let newStr = '';
+// for(key in obj){
+//     newStr = newStr + obj[key] + key;
+// }
+
+// console.log(newStr);
+
+
+// const str = 'aabbbcccdde';
+
+// Count frequencies using reduce
+// const obj = [...str].reduce((acc, char) => {
+//     acc[char] = (acc[char] || 0) + 1;
+//     return acc;
+// }, {})
+
+
+//////////////////////////////////////////////////////////////////
+
+
+// // let length = 0;
+// // let reveseStr = '';
+// // let nameStr = 'shoaib';
+
+// function test(str) {
+//     if (length < nameStr.length) {
+//         let index = str.length - length;
+//         reveseStr = reveseStr + str[index - 1];
+//         length++;
+
+//         test(str);
+//     }
+// }
+
+// test(nameStr);
+// console.log(reveseStr);
+
+
+// reverse string without using any method and without loop
+
+// let length = 0;
+// let nameStr = 'shoaib';
+// let reveseStr = '';
+
+// function reverse(str, length, reveseStr) {
+//     if (length < str.length) {
+//         let index = str.length - length;
+//         reveseStr = reveseStr + str[index - 1];
+//         length++;
+//         return reverse(str, length, reveseStr);
+//     }
+//     return reveseStr;
+// }
+
+// console.log(reverse(nameStr, 0, reveseStr));
+
+
+//////////////////////////////////////////////////////////////////////
+
+
+// function highest(numArr, length = 0, high = Number.NEGATIVE_INFINITY) {
+//     if (length >= numArr.length) return high; // Base case: we've checked all elements
+//     if (numArr[length] > high) high = numArr[length]; // Update high if current element is greater
+//     return highest(numArr, length + 1, high); // Recursive call with updated length and high
+// }
+
+
+// function secondHigh(arr) {
+//     if (arr.length < 2) return 'Array is too short'; // Check if the array has at least 2 elements
+//     const highestNum = highest(arr); // Find the highest number
+//     const filteredArr = arr.filter(item => item !== highestNum); // Remove all occurrences of the highest number
+//     let secondHighNum = highest(filteredArr);
+//     return secondHighNum;
+// }
+
+// // Example usage
+
+// console.log(secondHigh(arr));
+
+
+// const secondHighest = (arr) => {
+//     if (arr.length <= 2) {
+//         const [first, second] = arr;
+//         return first > second ? [first, second] : [second, first];
+//     }
+
+//     const [n, ...rest] = arr;
+//     const [highest, secondHigh] = secondHighest(rest);
+
+//     if (n > highest) return [n, highest];
+//     if (n > secondHigh) return [highest, n];
+
+//     return [highest, secondHigh];
+// }
+
+
+// const arr = [1,2];
+// const arr = [3, 2, 1];
+// const arr = [1,2,3];
+// const arr = [4, -7, -6];
+// const arr = [-2, -7, -1];
+// const arr = [3, 24,46,32,45,75, 1];
+// const arr = [24, 24, 24];
+// console.log(secondHighest(arr))
+
+
+/////////////////////////////////////////////////////////
+
+
+// function test(num1,num2,num3){
+//     let maxNum = 0;
+//     if(num1 > maxNum) maxNum = num1;
+//     if(num2 > maxNum) maxNum = num2;
+//     if(num3 > maxNum) maxNum = num3;
+//     return maxNum;
+// }
+// console.log(test(4,5,8)) 
+
+// function secondHig(arr){
+//    let sortArr = arr.sort((a,b) => b-a);
+//    return sortArr[1];
+// }
+// let arr = [4,5,7,2]
+
+
+// console.log(secondHig(arr));
+
+
+//////////////////////////////////////////////////////////////////////
+
+
+
+// let name = 'c/:d/e/:fgr';
+// let name1 = 'c/1/e/5';
+
+
+// let obj = {};
+
+// let name11 = name1.split('/');
+
+// name.split('/').forEach((element, index) => {
+//     let subArr =  element.split(':');
+//     if(subArr.length === 2) obj[subArr[1]] = name11[index]
+
+// });
+
+// console.log(obj);
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+// let str = 's1ho23aib4Hus5sa6in7';
+// let currentValue = '';
+// let total = 0;
+
+// for (let i = 0; i <= str.length; i++) {
+//     if(!isNaN(str[i]))
+//     {
+//      currentValue = currentValue +   str[i];
+//     }else{
+//         if(currentValue){
+//             total +=  +currentValue;
+//             currentValue = '';
+//         }
+//     }
+// }
+
+
+// console.log(total);
+
+/////////////////////////////////////////////////////////
+
+// Add all the digits of the ID and continue until the sum is a single digit.
+
+// const id = '1234567';
+
+// function sum(id) {
+//   if (id.length > 1) {
+//     let newId = id.split('').reduce((curr, sum) => Number(sum)+ Number(curr))
+//     if(String(newId).length > 1){
+//       return sum(String(newId));
+//     }else{
+//       return newId;
+//     }
+//   }
+// }
+
+// console.log(sum(id))
+
+
+////////////////////////////////////////////////////////////////////////////
+
+// let str = 'aesgserbtsrndytjdfrdrvsthdrjdt';
+// function test(str) {
+//     let a = str.split('').reduce((pre, curr) => {
+//         if (!pre[curr]) {
+//             pre[curr] = 1;
+//             return pre;
+//         } else {
+//             pre[curr] = pre[curr] + 1
+//             return pre;
+//         }
+//     }, {});
+
+//     let key = 'key';
+//     let value = 0;
+
+//     for (let c in a) {
+//         if (a[c] > value) {
+//             key = c;
+//             value = a[c]
+//         }
+//     }
+
+//     return { [key]: value };
+
+
+// }
+
+// console.log(test(str))
+
+////////////////////////////////////////////////////////////////////////////    
+
+// function test(...a){
+//     console.log(...a);
+// }
+
+// test(1,2);
+
+//////////////////////////////////////////////////////////////////////////// 
+
+
+// const emp = {};
+
+// // Freeze the object
+// Object.freeze(emp);
+
+// // Attempt to modify the object
+// emp.name = 'Alice'; // This will not work
+// emp.age = 30;       // This will not work
+
+// console.log(emp); // Output: {}
+
+//////////////////////////////////////////////////////////////////////////// 
+

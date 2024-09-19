@@ -263,7 +263,42 @@
 // select e.role_id from Employees e GROUP BY e.role_id;
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// UNION ALL
+
+// SELECT id, name, department
+// FROM employees
+// UNION ALL
+// SELECT id, name, department
+// FROM contractors;
+
+
+// employees table:
+
+// id	name	department
+// 1	Alice	HR
+// 2	Bob	IT
 
 
 
+// contractors table:
 
+// id	name	department
+// 3	Charlie	IT
+// 4	Diana	Marketing
+
+
+
+// Result:
+// id	name	department
+// 1	Alice	HR
+// 2	Bob	IT
+// 3	Charlie	IT
+// 4	Diana	Marketing
+
+////////////////////////////////////////////////////////////
+
+// select * from Roles,Employees\G;
+
+// Output is n*n combination of all col
+
+////////////////////////////////////////////////////////////
