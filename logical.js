@@ -1521,3 +1521,54 @@ let arrayList = [2, 1, 2, 5, 2, 3, 1, 5, 7];
 
 //////////////////////////////////////////////////////////////////////////// 
 
+
+// function add(num1,num2){
+//     "use strict"
+//     num1 = 100;
+//     console.log(arguments[0]+arguments[1])
+// }
+
+
+
+// function add(num1,num2){
+//     // num1 = 100;
+//     // console.log(arguments[0]+arguments[1])
+
+//     console.log(arguments);
+// }
+
+
+// add(10,20);
+
+
+//////////////////////////////////////////////////////////////////////////// 
+
+// let str = 'Shoaib Husain';
+// let capitalCount = 0;
+// let totalVowels = 0;
+// let vowelCounts = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+
+// for (let char of str) {
+//     // Count capital letters
+//     if (char >= 'A' && char <= 'Z') {
+//         capitalCount++;
+//     }
+
+//     // Count vowels
+//     let lowerChar = char.toLowerCase();
+//     if (vowelCounts.hasOwnProperty(lowerChar)) {
+//         totalVowels++;
+//         vowelCounts[lowerChar]++;
+//     }
+// }
+
+// // Find the vowel with the highest count
+// let highestVowel = Object.entries(vowelCounts).reduce((max, [key, count]) => {
+//     return count > max.count ? { key, count } : max;
+// }, { key: '', count: 0 });
+
+// console.log('totalVowels ==>', totalVowels);
+// console.log('capitalCount ==> ', capitalCount);
+// console.log(highestVowel.key);
+
+//////////////////////////////////////////////////////////////////////////// 
